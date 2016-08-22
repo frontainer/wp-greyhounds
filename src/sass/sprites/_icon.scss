@@ -1,0 +1,97 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+*/
+$web-navigation-line-craft-1-109681-x: 0px;
+$web-navigation-line-craft-1-109681-y: 0px;
+$web-navigation-line-craft-1-109681-offset-x: 0px;
+$web-navigation-line-craft-1-109681-offset-y: 0px;
+$web-navigation-line-craft-1-109681-width: 512px;
+$web-navigation-line-craft-1-109681-height: 512px;
+$web-navigation-line-craft-1-109681-total-width: 1540px;
+$web-navigation-line-craft-1-109681-total-height: 1026px;
+$web-navigation-line-craft-1-109681-image: '/assets/images/icon.png';
+$web-navigation-line-craft-1-109681: 0px 0px 0px 0px 512px 512px 1540px 1026px '/assets/images/icon.png';
+$web-navigation-line-craft-2-109682-x: 514px;
+$web-navigation-line-craft-2-109682-y: 0px;
+$web-navigation-line-craft-2-109682-offset-x: -514px;
+$web-navigation-line-craft-2-109682-offset-y: 0px;
+$web-navigation-line-craft-2-109682-width: 512px;
+$web-navigation-line-craft-2-109682-height: 512px;
+$web-navigation-line-craft-2-109682-total-width: 1540px;
+$web-navigation-line-craft-2-109682-total-height: 1026px;
+$web-navigation-line-craft-2-109682-image: '/assets/images/icon.png';
+$web-navigation-line-craft-2-109682: 514px 0px -514px 0px 512px 512px 1540px 1026px '/assets/images/icon.png';
+$web-navigation-line-craft-3-109688-x: 0px;
+$web-navigation-line-craft-3-109688-y: 514px;
+$web-navigation-line-craft-3-109688-offset-x: 0px;
+$web-navigation-line-craft-3-109688-offset-y: -514px;
+$web-navigation-line-craft-3-109688-width: 512px;
+$web-navigation-line-craft-3-109688-height: 512px;
+$web-navigation-line-craft-3-109688-total-width: 1540px;
+$web-navigation-line-craft-3-109688-total-height: 1026px;
+$web-navigation-line-craft-3-109688-image: '/assets/images/icon.png';
+$web-navigation-line-craft-3-109688: 0px 514px 0px -514px 512px 512px 1540px 1026px '/assets/images/icon.png';
+$web-navigation-line-craft-4-109689-x: 514px;
+$web-navigation-line-craft-4-109689-y: 514px;
+$web-navigation-line-craft-4-109689-offset-x: -514px;
+$web-navigation-line-craft-4-109689-offset-y: -514px;
+$web-navigation-line-craft-4-109689-width: 512px;
+$web-navigation-line-craft-4-109689-height: 512px;
+$web-navigation-line-craft-4-109689-total-width: 1540px;
+$web-navigation-line-craft-4-109689-total-height: 1026px;
+$web-navigation-line-craft-4-109689-image: '/assets/images/icon.png';
+$web-navigation-line-craft-4-109689: 514px 514px -514px -514px 512px 512px 1540px 1026px '/assets/images/icon.png';
+$web-navigation-line-craft-5-109690-x: 1028px;
+$web-navigation-line-craft-5-109690-y: 0px;
+$web-navigation-line-craft-5-109690-offset-x: -1028px;
+$web-navigation-line-craft-5-109690-offset-y: 0px;
+$web-navigation-line-craft-5-109690-width: 512px;
+$web-navigation-line-craft-5-109690-height: 512px;
+$web-navigation-line-craft-5-109690-total-width: 1540px;
+$web-navigation-line-craft-5-109690-total-height: 1026px;
+$web-navigation-line-craft-5-109690-image: '/assets/images/icon.png';
+$web-navigation-line-craft-5-109690: 1028px 0px -1028px 0px 512px 512px 1540px 1026px '/assets/images/icon.png';
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
