@@ -2,15 +2,18 @@
 let webpack = require("webpack");
 
 let webpackConfig = {
+  entry: {
+    'app': './src/js/app.js'
+  },
   output: {
+    path: 'wp/assets/js',
+    publicPath: '/assets',
     filename: "[name].js",
     sourceMapFilename: 'maps/[name].map',
     jsonpFunction: 'fr'
   },
-  devtool: '#source-map',
   resolve: {
     modulesDirectories: [
-      'bower_components',
       'node_modules',
       'src'
     ]

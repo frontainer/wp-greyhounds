@@ -2,7 +2,12 @@
 let webpack = require("webpack");
 
 let webpackConfig = {
+  entry: {
+    'app': './src/js/app.js'
+  },
   output: {
+    path: 'wp/assets/js',
+    publicPath: '/assets',
     filename: "[name].js",
     sourceMapFilename: 'maps/[name].map',
     jsonpFunction: 'fr'
@@ -10,7 +15,6 @@ let webpackConfig = {
   devtool: '#source-map',
   resolve: {
     modulesDirectories: [
-      'bower_components',
       'node_modules',
       'src'
     ]
@@ -26,13 +30,6 @@ let webpackConfig = {
     ]
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({
-    //   exclude: /Spec\.js$/i,
-    //   compress: {
-    //     warnings: false
-    //   }
-    // }),
-    //new webpack.optimize.CommonsChunkPlugin('app','app.js'),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin()
