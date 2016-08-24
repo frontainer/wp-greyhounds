@@ -1,7 +1,7 @@
 const historyApiFallback = require('connect-history-api-fallback');
 module.exports = {
   "files": [
-    'wordpress/**/*'
+    'wp/**/*'
   ],
   "proxy": 'localhost',
   "port": 3000,

@@ -5,11 +5,11 @@ web:
   links:
     - fpm:php
   volumes:
-    - $PWD/wordpress:/var/www/html
+    - $PWD/wp:/var/www/html
 fpm:
   build: $PWD/docker/phpfpm
   volumes:
-    - $PWD/wordpress:/var/www/html
+    - $PWD/wp:/var/www/html
   links:
     - mysql:mysql
   ports:

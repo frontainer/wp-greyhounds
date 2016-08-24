@@ -3,5 +3,4 @@
 .DS_Store
 node_modules
 public
-wordpress
-wordpress/wp-content/themes/custom/assets
+wp
