@@ -1,6 +1,6 @@
 module.exports = {
   config: {
-    dest: "public",
+    dest: "wp",
     sasssrc : "src/sass",
     imgsrc: "src/images/**/*",
     imgdir: "src/images",
