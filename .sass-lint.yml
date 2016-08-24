@@ -16,10 +16,10 @@
 # Linter VendorPrefix, option "identifier_list"
 
 files:
-  include: './src/sass/**/*.scss'
+  include: 'src/sass/**/*.scss'
   ignore:
-    - './src/sass/base/_mixin.scss'
-    - './src/sass/base/_sanitize.scss'
+    - 'src/sass/base/_mixin.scss'
+    - 'src/sass/base/_sanitize.scss'
 options:
   formatter: stylish
   merge-default-rules: false
