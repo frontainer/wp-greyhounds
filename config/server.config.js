@@ -3,7 +3,7 @@ module.exports = {
   "files": [
     'wp/**/*'
   ],
-  "proxy": 'localhost',
+  "server": 'public',
   "port": 3000,
   "middleware": [
     // historyApiFallback()
