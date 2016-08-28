@@ -1,5 +1,5 @@
 FROM php:7-fpm
-RUN requirements="libmcrypt-dev g++ libicu-dev libmcrypt4 libicu52 git libfreetype6-dev libjpeg-dev libjpeg62-turbo-dev libpng12-dev libmcrypt-dev vim zlib1g-dev" \
+RUN requirements="libmcrypt-dev g++ libicu-dev libmcrypt4 libicu52 libfreetype6-dev libjpeg-dev libjpeg62-turbo-dev libpng12-dev libmcrypt-dev zlib1g-dev" \
    && apt-get update && apt-get install -y $requirements \
    && docker-php-ext-configure gd \
         --with-freetype-dir=/usr/include/ \
