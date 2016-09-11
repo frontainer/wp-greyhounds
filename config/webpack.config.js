@@ -1,7 +1,7 @@
 'use strict';
-let webpack = require("webpack");
+const webpack = require("webpack");
 
-let webpackConfig = {
+const webpackConfig = {
   entry: {
     'app': './src/js/app.js'
   },
@@ -30,9 +30,6 @@ let webpackConfig = {
     ]
   },
   plugins: [
-    new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin()
   ],
   eslint: {
     configFile: '.eslintrc',

@@ -1,7 +1,7 @@
 'use strict';
-let webpack = require("webpack");
-
-let webpackConfig = {
+const webpack = require("webpack");
+const ClosureCompiler = require('google-closure-compiler-js').webpack;
+const webpackConfig = {
   entry: {
     'app': './src/js/app.js'
   },
@@ -29,11 +29,13 @@ let webpackConfig = {
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      exclude: /Spec\.js$/i,
-      compress: {
-        warnings: false
-      }
+    new ClosureCompiler({
+      options: {
+        languageIn: 'ECMASCRIPT6',
+        languageOut: 'ECMASCRIPT5',
+        compilationLevel: 'ADVANCED',
+        warningLevel: 'VERBOSE',
+      },
     }),
     //new webpack.optimize.CommonsChunkPlugin('app','app.js'),
     new webpack.optimize.AggressiveMergingPlugin(),

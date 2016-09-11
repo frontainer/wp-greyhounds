@@ -2938,6 +2938,11 @@
         }
       }
     },
+    "google-closure-compiler-js": {
+      "version": "20160828.0.1",
+      "from": "google-closure-compiler-js@latest",
+      "resolved": "https://registry.npmjs.org/google-closure-compiler-js/-/google-closure-compiler-js-20160828.0.1.tgz"
+    },
     "got": {
       "version": "5.6.0",
       "from": "got@>=5.0.0 <6.0.0",
