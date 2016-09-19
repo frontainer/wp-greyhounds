@@ -3,6 +3,11 @@ module.exports = {
   "files": [
     'wp/**/*'
   ],
+  "watchOptions": {
+    "ignoreInitial": true,
+    "ignored": '**/*.map'
+  },
+  "reloadDelay": 300,
   "proxy": 'localhost',
   "port": 3000,
   "middleware": [

@@ -1,5 +1,6 @@
 module.exports = {
   config: {
+    tmp: '.tmp',
     dest: "wp",
     sasssrc : "src/sass",
     imgsrc: "src/images/**/*",
@@ -12,13 +13,13 @@ module.exports = {
     "pug": "pug ${viewsrc} -o ${dest} -P",
     "sprite": "spritesmith --rc ./config/sprite.config.js",
     "sasslint": "sass-lint ${sasssrc}/**/*.scss -v",
-    "sass": "node-sass ${sasssrc} --output ${dest}/assets/css --source-map ${dest}/assets/css",
-    "postcss": "postcss -c ./config/postcss.config.js -r ${dest}/assets/css/**/*.css -m",
+    "sass": "node-sass ${sasssrc} --output ${tmp}/css --source-map ${tmp}/css",
+    "postcss": "postcss -m -c ./config/postcss.config.js -d ${dest}/assets/css/**/*.css ${tmp}/css/**/*.css",
 
     "build:copy": "sync-dir --config ./config/sync.config.js",
     "build:script": "tasks webpack",
     "build:image": "tasks imagemin",
-    "build:sass": "tasks sasslint && tasks sass && tasks postcss",
+    "build:sass": "tasks sasslint && tasks sass && tasks postcss && rimraf ${tmp}",
 
     "server:browser": "wait-on http://localhost && browser-sync start --config ./config/server.config.js",
     "server:docker": "docker-compose up --build",
